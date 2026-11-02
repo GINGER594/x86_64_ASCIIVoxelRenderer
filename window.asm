@@ -83,14 +83,14 @@ outWin:
         xor r11, r11 ;win x
         iterOutWinX:
             mov rax, [win+r12+r11] ;win[y][x]
-            ;dividing z by arbitrary value for contrast (unsigned as z >= 0 due to clamp in loadVoxelWin)
+            ;div z by arbitrary value for contrast
             cqo
             div qword [zDiv]
             ;clamp z < len(zMap)
             mov rbx, zMapEnd
             cmp rax, zMapEnd
             cmovg rax, rbx
-            ;mapping z to zMap and inserting into output buffer
+            ;mapping z to zMap, inserting into output buffer
             mov rbx, [zMap+rax] ;zMap[win[y][x]]
             mov [outBuff+rcx], rbx
             ;adding space for padding
