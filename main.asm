@@ -2,7 +2,7 @@ section .data
     escC: db 27, 99, 0
 
     sleepSec: dq 0
-    sleepNano: dq 1200000
+    sleepNano: dq 1000000
 
 section .text
 extern constructAbt
