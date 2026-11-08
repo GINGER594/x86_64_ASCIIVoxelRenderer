@@ -18,7 +18,7 @@ section .data
     dqMaxVoxels: equ maxVoxels*8 ;quad-word vec3d count (voxelArr size in bytes)
 
 section .bss
-    vsrr: resq 1;voxelCube synthetic return register
+    vsrr: resq 1 ;voxelCube synthetic return register
 
     voxelArr: resq maxVoxels ;*vec3d arr
     dqVoxelCount: resq 1
